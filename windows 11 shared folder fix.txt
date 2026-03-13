@@ -1,0 +1,14 @@
+Powershell:
+
+Enable insecure guest logons
+
+Set-SmbClientConfiguration -EnableInsecureGuestLogons $true -Force
+
+
+Disable SMB security signing (client)
+
+Set-SmbClientConfiguration -RequireSecuritySignature $false -Force
+
+Disable SMB security signing (server)
+
+Set-SmbServerConfiguration -RequireSecuritySignature $false -Force
