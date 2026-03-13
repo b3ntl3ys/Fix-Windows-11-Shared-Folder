@@ -12,3 +12,20 @@ Set-SmbClientConfiguration -RequireSecuritySignature $false -Force
 Disable SMB security signing (server)
 
 Set-SmbServerConfiguration -RequireSecuritySignature $false -Force
+
+
+
+
+
+Default Settings
+Reverting back SMB settings to secure defaults...
+
+Disable insecure guest logons
+
+powershell -Command "Set-SmbClientConfiguration -EnableInsecureGuestLogons $false -Force"
+
+Enable SMB security signing (client)
+powershell -Command "Set-SmbClientConfiguration -RequireSecuritySignature $true -Force"
+
+Enable SMB security signing (server)
+powershell -Command "Set-SmbServerConfiguration -RequireSecuritySignature $true -Force"
